@@ -6,5 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./persona.component.css']
 })
 export class PersonaComponent {
-  constructor() { }
+  public nombre:string = 'Juan';
+  public apellido:string = 'Perez';
+  private edad:number = 28;
+
+  getEdad():number{
+    return this.edad;
+  }
 }

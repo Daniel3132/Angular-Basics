@@ -1,0 +1,17 @@
+<div class="card text-left w-50 m-auto">
+    <div class="card-body">
+        <h4 class="card-title">Suma dos Numeros</h4>
+        <p class="card-text">two way binding</p>
+        <div class="card">
+            <input type="number" [(ngModel)]="numero1">
+            <h4 class="m-auto">+</h4>
+            <input type="number" [(ngModel)]="numero2">
+
+            <button class="mt-3" (click)="sumarNum()">Sumar</button>
+            <div class="mt-3" [hidden]="ocultar">
+                <h3>Resultado: {{resultado}}</h3>
+            </div>
+
+        </div>
+    </div>
+</div>
