@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CalculadoraComponent {
   numero1: number = 0;
   numero2: number = 0;
-  resultado = 0;
-  ocultar = true;
+  resultado: number = 0;
+  ocultar: boolean = true;
   sumarNum() {
     this.resultado = this.numero1 + this.numero2;
     this.ocultar = false;
