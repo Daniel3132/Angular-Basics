@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculadora.component.css']
 })
 export class CalculadoraComponent {
-  numero1: number = 0;
-  numero2: number = 0;
+  numero1: number;
+  numero2: number;
   resultado: number = 0;
   ocultar: boolean = true;
   sumarNum() {
