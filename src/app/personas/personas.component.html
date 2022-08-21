@@ -1,19 +1,20 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Listado de Personas</h1>
-            <button class="btn btn-primary" [disabled]="deshabilitar"
-            (click)="agregarPersona()">Agregar persona</button>
+<div class="box">
+    <div class="box">
+        <div class="box">
+            <h3>Listado de Personas</h3>
+            <button class="btn btn-primary" [disabled]="deshabilitar" (click)="agregarPersona()">Agregar
+                persona</button>
             <p *ngIf="mostrar; else sinPersona">{{ mensaje }} con el título de {{ titulo }}</p>
             <ng-template #sinPersona>
                 <p>No se ha agregado niguna persona</p>
             </ng-template>
-            <app-persona></app-persona>
+            <div class="box">
+                <app-persona></app-persona>
+            </div>
             <label for="">Título Persona</label>
             <!-- <input type="text" class="form-control"
             (input)="modificarTitulo($event)"> event binding-->
-            <input type="text" class="form-control"
-            [(ngModel)]="titulo"> <!-- two way binding -->
+            <input type="text" [(ngModel)]="titulo"> <!-- two way binding -->
             {{titulo}}
         </div>
     </div>

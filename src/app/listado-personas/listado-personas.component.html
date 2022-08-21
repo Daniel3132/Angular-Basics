@@ -1,10 +1,14 @@
-<div class="container m-5">
-    <div class="col">
-        <h3>{{ titulo }}</h3>
+<div class="box m-5">
+    <div id="heading">
+        <h1>{{ titulo }}</h1>
+    </div>
+    <div class="box">
+        <app-persona-l *ngFor="let persona of personas; let i = index" [persona]="persona" [indice]="i">
+        </app-persona-l>
     </div>
     <hr>
-    <app-formulario></app-formulario>
+    <div class="box">
+        <app-formulario></app-formulario>
+    </div>
     <hr>
-    <app-persona-l *ngFor="let persona of personas; let i = index" [persona]="persona" [indice]="i">
-    </app-persona-l>
 </div>
