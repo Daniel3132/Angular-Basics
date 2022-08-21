@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggingService } from '../LoggingService.service';
+import { PersonasService } from '../personas.services';
 import { Persona } from './persona.model';
 
 
@@ -7,21 +8,19 @@ import { Persona } from './persona.model';
   selector: 'app-listado-personas',
   templateUrl: './listado-personas.component.html',
   styleUrls: ['./listado-personas.component.css'],
-  providers:[LoggingService]
+  providers:[LoggingService] // se puede tener aqui tanto como en el app.module (estaria de forma global)
 })
-export class ListadoPersonasComponent {
+export class ListadoPersonasComponent implements OnInit {
 
   public titulo = 'Listado de personas';
 
-  personas: Persona[] = [
-    new Persona('Juan', 'Perez'),
-    new Persona('Sara', 'Muñoz')
-  ];
+  personas: Persona[] = [];
 
-  constructor(private LoggingService:LoggingService){}
+  constructor(private LoggingService:LoggingService,
+    private personasService: PersonasService){}
 
-  personaAgregada(persona: Persona) {
-    this.LoggingService.enviarMensajeAConsola("Agregamos una persona")
-    this.personas.push(persona);
-  }
+    ngOnInit(): void {
+        this.personas = this.personasService.personas;
+    }
+
 }

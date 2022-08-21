@@ -9,6 +9,8 @@ import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { ListadoPersonasComponent } from './listado-personas/listado-personas.component';
 import { PersonaLComponent } from './persona-l/persona-l.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { PersonasService } from './personas.services';
+import { LoggingService } from './LoggingService.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { FormularioComponent } from './formulario/formulario.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [], //aqui tambien se pueden inyectar los servicios haciendose de manera global y no solo del componente
+  providers: [LoggingService,PersonasService], //aqui tambien se pueden inyectar los servicios haciendose de manera global y no solo del componente
   bootstrap: [AppComponent]
 })
 export class AppModule { }
